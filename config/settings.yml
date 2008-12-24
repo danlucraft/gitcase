@@ -1,7 +1,7 @@
 development: &non_production_settings
   site_url: http://localhost:3000
-  site_name: Bort
-  admin_email: bort@bort.com
+  site_name: gitcase
+  admin_email: dan@fluentradical.com
   
 test:
   <<: *non_production_settings
