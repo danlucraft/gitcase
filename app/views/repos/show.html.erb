@@ -1,0 +1,10 @@
+
+<%= link_to "repositories", :action => 'index' %>
+
+<h1><%= @repo.name %></h1>
+
+<ul class="commitlist">
+  <% @repo.commits.each do |commit| %>
+    <%= render :partial => "shared/commit", :locals => {:commit => commit} %>
+  <% end %>
+</ul>

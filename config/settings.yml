@@ -2,6 +2,7 @@ development: &non_production_settings
   site_url: http://localhost:3000
   site_name: gitcase
   admin_email: dan@fluentradical.com
+  repos_path: /home/dan/Projects/
   
 test:
   <<: *non_production_settings
