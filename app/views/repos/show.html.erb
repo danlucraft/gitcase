@@ -8,3 +8,14 @@
     <%= render :partial => "shared/commit", :locals => {:commit => commit} %>
   <% end %>
 </ul>
+
+<table>
+  <tr><th>file</th><th>modified</th><th>commit message</th></tr>
+  <% @repo.commits.first.tree.contents.each do |item| %>
+    <tr>
+      <td><%= item.name%></td>
+      <td></td>
+      <td></td>
+     </tr>
+  <% end %>
+</table>

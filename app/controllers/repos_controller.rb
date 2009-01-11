@@ -1,11 +1,8 @@
+
 class ReposController < ApplicationController
 	def index
 		@repos = Repository.all
-		@commits = @repos.map do |repo|
-			repo.commits.map do |commit|
-				[commit, repo, commit.date]
-			end
-		end.flatten(1).sort_by(&:last).reverse[0..10]
+		@commits = @repos.map(&:commits).flatten.sort_by(&:date).reverse[0..10]
 	end
 	
 	def show

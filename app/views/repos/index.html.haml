@@ -1,0 +1,17 @@
+
+.repolist
+  - @repos.each do |repo|
+    %h2
+      = link_to repo.name, :action => "show", :id => repo.name
+
+.right
+  %ul.commitlist.short
+    - @commits.each do |commit|
+      %li
+        %strong 
+          = grit_repo_name(commit.instance_variable_get(:@repo))
+        = commit.message
+        %br
+        %strong
+          = commit.author
+        = distance_of_time_in_words_to_now(commit.date)
